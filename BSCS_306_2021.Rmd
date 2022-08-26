@@ -1,0 +1,216 @@
+---
+title: "BSCS_306_Practical"
+author: "Dr Tahseen Jilani"
+date: "1/14/2022"
+output: word_document
+---
+
+# Selecting a dataset
+# -------------------
+Choose a data set from R built-in datasets or from UCI or Kaggle.
+
+```{r}
+data() # To see the available data sets.
+```
+
+You can write about the data set you have selected. About the variables, number of rows (samples), columns (variables).
+
+Outside the cells, if you put # it will be converted into heading. ## or subheading and so on. Useful website: http://www.sthda.com/english/wiki/r-built-in-data-sets
+
+```{r}
+data(mtcars)  # 1. Loading 
+head(mtcars) # 2. Print only top few values of the data
+dim(mtcars) # Check the dimensions of the data.
+#nrow(mtcars) # ncol(mtcars)
+
+print(summary(mtcars))
+# To print more than one results use, print(your command). 
+# For example(print(dim(mtcars)))
+
+
+#install.packages("readxl")
+#library("readxl")
+
+getwd()
+#setwd("give\the\folder\path\here)
+# mydata = read.csv("filename.csv")
+
+library(ggplot2)
+
+```
+
+```{r}
+# Example of taking summary of a dataset.
+# iris = iris  # Loading iris flowers data from R built-in datasets.
+mtcars=  mtcars
+
+
+# Note: In case you need to convert a categorical variable into numerical categories. For example gender = {Male, Female} will become Gender_c = {1,0} (based on alphabetical order of F and M).
+
+table(mtcars$cyl, mtcars$gear)
+
+as.numeric(iris$Species)
+# Now for the species column, we can use 
+iris$Species = as.numeric(iris$Species) # Overwrite th actual names with numbers. 
+# R is case sensitive. Take care of small and capital letters
+```
+
+# 3. Basic plots
+# ---------------
+It is better to make some basic plots and discuss any possible outlier or any unique behavior(s) of the data. You are free to make as many plots and comments.  
+You can add scatter-plots, histograms, box-plots etc in your report as appropriate. 
+
+```{r}
+attach(mtcars)
+# In place of mtcars$mpg jus use mpg.
+
+boxplot(iris$Sepal.Length , iris$Species) # Simple box plot for the variable iri-Sepal length versus Species.
+
+hist(mtcars$mpg, breaks= 15, col = 'Grey',
+     xlab= 'Miles per gallon', 
+     main = 'Histogram for miles per gallon for the Cars dataset')
+
+boxplot(mtcars$hp ~ mtcars$gear, main="Fig.-1: Boxplot of Mileage of Four Types of gear", col= rainbow(3))
+
+plot(mtcars$mpg, mtcars$hp, col = "Blue")
+
+# you can use ggplot2 as well. But optional.
+#install.packages(ggplot2)
+library(ggplot2)
+
+```
+
+# Correlation
+# -----------
+```{r}
+cor(mtcars)
+# Look at the magnitude and sign of the values. Comment and see which variables are more closely related to each other.
+
+
+# You can plot the correlation values using corr.plot in the corrplot Package.
+# -----------------------------------------------------------------------------
+library(corrplot)
+cor.mat.mtcars = cor(mtcars)
+corrplot(cor.mat.mtcars)
+
+```
+
+
+
+# Confidence interval
+# -------------------
+```{r}
+# You can get help for this from the following links
+
+# The commands can be found here.
+# https://cran.r-project.org/web/packages/Rmisc/Rmisc.pdf
+# You can make confidence interval for mean(s) and Variance(s).
+  
+#install.packages(Rmisc)
+library(Rmisc)
+
+#CI(x, ci = 0.95) # Calculates the confidence interval of a vector of data.
+CI(mtcars$mpg, ci = 0.95) # Calculates the confidence interval of a vector of data.
+# Also comment about whether the mean is significantly different from zero.
+
+# This can be done manually
+# https://www.r-bloggers.com/2021/04/calculating-confidence-interval-in-r/
+# https://www.cyclismo.org/tutorial/R/confidence.html
+
+```
+
+
+# Hypothesis testing
+# -------------------
+```{r}
+# In the stat pacakge, you can find different hypothsis tests.
+library(stats)
+
+# One sample t-test
+# -------------------
+t.test(mtcars$mpg, mu = 20) # to test: Is the mean value of mpg differ from 20 or not?
+t.test(mtcars$mpg, mu =20 , alternative = 'greater') # if you want to test on sided alternative. 
+
+# Two sample t-test for two independent samples
+# ----------------------------------------------
+# t.test(iris$Sepal.Length, iris$Petal.Width)
+
+# Two sample t-test for a variable with two categories defined in other variable.
+# For example: Grades comparsion between male and female students. So we will have two variables 1. grades and 2. gender (with exactly two categories).
+# -----------------------------------------------------------------------------------
+t.test(mtcars$mpg ~ mtcars$vs , data = mtcars)
+
+# Useful help for this task can be found at https://data-flair.training/blogs/hypothesis-testing-in-r/
+
+```
+
+# Chi-square test
+# ---------------
+```{r}
+# Chose any two categorical variables (or some variable with up to 10 unique values).
+# Then apply the Chi-Square test to see test of association/ independence.
+
+chisq.test(iris$Sepal.Length, iris$Species)
+
+chisq.test(mtcars$mpg, mtcars$gear)
+
+# You will get the Chi-square test value. Also comment on the P-value of the test.
+# you can add more than one Chi-square test to get more data insights.
+
+```
+
+# Analysis of Variance
+# --------------------
+```{r}
+library(car)
+# ONE WAY ANOVA 
+# Question: Do the types of gear affect eh miles per gallon? 
+boxplot(mtcars$mpg ~ mtcars$gear, col= rainbow(5))
+model1 <- aov(mtcars$mpg ~ mtcars$gear)
+summary(model1)
+
+# You can see the ANOVA table and can comment on the ANOVA test result. Comment using F-value and P-value of the test. You need to define Null and Alternative hypothsis as well.
+
+# For help # https://www.r-bloggers.com/2017/08/one-way-anova-in-r/
+```
+
+# Linear and Multiple Regression Models:
+# --------------------------------------
+```{r}
+# Linear Regression line formula:
+# -------------------------------
+attach(mtcars)
+
+fit.LR <- lm(mpg ~ gear, data = mtcars)
+summary(fit.LR)  
+
+# This will give details of the model including the 
+# correlation, parameters (intercept and slope) along with P-value and Mean sum of squares.  #You need to write comments on these three at least.
+#You can add more plots or further analyses/ details/comments as you like. 
+
+
+# Multiple Regression line formula:
+# -------------------------------
+#But if you want to fit y dependent on more than 1 independent variables, #then use the following command
+
+fit.MR <- lm(mpg ~ cyl + gear + hp + disp + wt, data = mtcars)
+summary(fit.MR)
+
+
+# beta0 = intercept of the regression line. 
+# beta1 = slope of the first independent variable.
+# beta2 = slope of the second independent variable. And so on
+
+
+# Applying test on the coefficicnt
+
+# See Walopole book and check the t-test formula for testing each parameter (intercept, slope and so on). You can see the t-test value and corresponding P-value. You need to comment on the significance of the parameters at 5% level of significance.  
+
+
+# Is the overall regression model suitable?
+# ---------------------------------------
+anova(fit.LR)  # Test difference in slopes (joint F-test)
+# The F-statistic value will tell whether the result is good or not.
+
+```
+

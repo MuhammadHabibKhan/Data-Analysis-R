@@ -1,0 +1,827 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={B20102088-MuhammadHabibKhan-FinalLab},
+  pdfauthor={Muhammad Habib Khan},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{B20102088-MuhammadHabibKhan-FinalLab}
+\author{Muhammad Habib Khan}
+\date{1/22/2022}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Converting Time Series into Data Frame Structure}
+
+\FunctionTok{data}\NormalTok{(Seatbelts)}
+\NormalTok{Seatbelts }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Year=}\FunctionTok{floor}\NormalTok{(}\FunctionTok{time}\NormalTok{(Seatbelts)),}
+\AttributeTok{Month=}\FunctionTok{factor}\NormalTok{(}\FunctionTok{cycle}\NormalTok{(Seatbelts),}
+\AttributeTok{labels=}\NormalTok{month.abb), Seatbelts)}
+
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{echo =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{library}\NormalTok{(knitr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{selecting-a-dataset}{%
+\section{Selecting a Dataset}\label{selecting-a-dataset}}
+
+Data Set Name: \emph{Seatbelts}
+
+Data Set From built-in R Data sets in package `datasets'
+
+\textbf{Abstract}: Road Casualties in Great Britain 1969-84
+
+\textbf{Data Set Information:}
+
+The `Seatbelts' data set in R is a multiple time-series data set that
+was commissioned by the Department of Transport in 1984 to measure
+differences in deaths before and after front seat belt legislation was
+introduced on 31st January 1983. It provides monthly total numerical
+data on a number of incidents including those related to death and
+injury in Road Traffic Accidents (RTA's). The data set starts in January
+1969 and observations run until December 1984.
+
+\textbf{Attributes:}
+
+DriversKilled: Car drivers killed.
+
+drivers: Same as \emph{UKDriverDeaths} deaths count.
+
+\emph{UKDriverDeaths is a time series giving the monthly totals of car
+drivers in Great Britain killed or seriously injured Jan 1969 to Dec
+1984. Compulsory wearing of seat belts was introduced on 31 Jan 1983.}
+\emph{Seat belts is more information on the same problem.}
+
+front: Front-seat passengers killed or seriously injured.
+
+rear: Rear-seat passengers killed or seriously injured.
+
+kms: Distance driven.
+
+PetrolPrice: Petrol price.
+
+VanKilled: Number of van (`light goods vehicle') drivers killed.
+
+law: 0/1: Was the law in effect that month?
+
+\hypertarget{data-set-at-a-glance}{%
+\section{Data Set At A Glance}\label{data-set-at-a-glance}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Summary of the Entire Data}
+\FunctionTok{summary}\NormalTok{(Seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Year          Month    DriversKilled      drivers         front       
+##  Min.   :1969   Jan    :16   Min.   : 60.0   Min.   :1057   Min.   : 426.0  
+##  1st Qu.:1973   Feb    :16   1st Qu.:104.8   1st Qu.:1462   1st Qu.: 715.5  
+##  Median :1976   Mar    :16   Median :118.5   Median :1631   Median : 828.5  
+##  Mean   :1976   Apr    :16   Mean   :122.8   Mean   :1670   Mean   : 837.2  
+##  3rd Qu.:1980   May    :16   3rd Qu.:138.0   3rd Qu.:1851   3rd Qu.: 950.8  
+##  Max.   :1984   Jun    :16   Max.   :198.0   Max.   :2654   Max.   :1299.0  
+##                 (Other):96                                                  
+##       rear            kms         PetrolPrice        VanKilled     
+##  Min.   :224.0   Min.   : 7685   Min.   :0.08118   Min.   : 2.000  
+##  1st Qu.:344.8   1st Qu.:12685   1st Qu.:0.09258   1st Qu.: 6.000  
+##  Median :401.5   Median :14987   Median :0.10448   Median : 8.000  
+##  Mean   :401.2   Mean   :14994   Mean   :0.10362   Mean   : 9.057  
+##  3rd Qu.:456.2   3rd Qu.:17202   3rd Qu.:0.11406   3rd Qu.:12.000  
+##  Max.   :646.0   Max.   :21626   Max.   :0.13303   Max.   :17.000  
+##                                                                    
+##       law        
+##  Min.   :0.0000  
+##  1st Qu.:0.0000  
+##  Median :0.0000  
+##  Mean   :0.1198  
+##  3rd Qu.:0.0000  
+##  Max.   :1.0000  
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Gist of the Data including only few of the rows}
+\FunctionTok{head}\NormalTok{(Seatbelts, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year Month DriversKilled drivers front rear   kms PetrolPrice VanKilled law
+## 1 1969   Jan           107    1687   867  269  9059   0.1029718        12   0
+## 2 1969   Feb            97    1508   825  265  7685   0.1023630         6   0
+## 3 1969   Mar           102    1507   806  319  9963   0.1020625        12   0
+## 4 1969   Apr            87    1385   814  407 10955   0.1008733         8   0
+## 5 1969   May           119    1632   991  454 11823   0.1010197        10   0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Another useful command to look at the summarized data and skim it}
+
+\FunctionTok{library}\NormalTok{(skimr)}
+\FunctionTok{skim}\NormalTok{(Seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule
+& \\
+\midrule
+\endfirsthead
+\toprule
+& \\
+\midrule
+\endhead
+Name & Seatbelts \\
+Number of rows & 192 \\
+Number of columns & 10 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+factor & 1 \\
+numeric & 8 \\
+ts & 1 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\bottomrule
+\end{longtable}
+
+\textbf{Variable type: factor}
+
+\begin{longtable}[]{@{}lrrlrl@{}}
+\toprule
+skim\_variable & n\_missing & complete\_rate & ordered & n\_unique &
+top\_counts \\
+\midrule
+\endhead
+Month & 0 & 1 & FALSE & 12 & Jan: 16, Feb: 16, Mar: 16, Apr: 16 \\
+\bottomrule
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}lrrrrrrrrrl@{}}
+\toprule
+skim\_variable & n\_missing & complete\_rate & mean & sd & p0 & p25 &
+p50 & p75 & p100 & hist \\
+\midrule
+\endhead
+DriversKilled & 0 & 1 & 122.80 & 25.38 & 60.00 & 104.75 & 118.5 & 138.00
+& 198.00 & ▁▇▆▃▁ \\
+drivers & 0 & 1 & 1670.31 & 289.61 & 1057.00 & 1461.75 & 1631.0 &
+1850.75 & 2654.00 & ▂▇▃▂▁ \\
+front & 0 & 1 & 837.22 & 175.10 & 426.00 & 715.50 & 828.5 & 950.75 &
+1299.00 & ▂▆▇▅▁ \\
+rear & 0 & 1 & 401.21 & 83.10 & 224.00 & 344.75 & 401.5 & 456.25 &
+646.00 & ▃▇▇▂▁ \\
+kms & 0 & 1 & 14993.60 & 2938.05 & 7685.00 & 12685.00 & 14987.0 &
+17202.50 & 21626.00 & ▂▆▇▇▂ \\
+PetrolPrice & 0 & 1 & 0.10 & 0.01 & 0.08 & 0.09 & 0.1 & 0.11 & 0.13 &
+▆▅▇▇▁ \\
+VanKilled & 0 & 1 & 9.06 & 3.64 & 2.00 & 6.00 & 8.0 & 12.00 & 17.00 &
+▅▇▅▆▂ \\
+law & 0 & 1 & 0.12 & 0.33 & 0.00 & 0.00 & 0.0 & 0.00 & 1.00 & ▇▁▁▁▁ \\
+\bottomrule
+\end{longtable}
+
+\textbf{Variable type: ts}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.13}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.09}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.13}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.06}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.05}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.09}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.07}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.07}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.05}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.05}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.05}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.07}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.10}}@{}}
+\toprule
+skim\_variable & n\_missing & complete\_rate & start & end & frequency &
+deltat & mean & sd & min & max & median & line\_graph \\
+\midrule
+\endhead
+Year & 0 & 1 & 1969 & 1984 & 12 & 0.08 & 1976.5 & 4.62 & 1969 & 1984 &
+1976.5 & ⣀⣀⠤⠤⠒⠒⠉⠉ \\
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Another command to displays the type and a preview of all columns as a row }
+\CommentTok{\# so that it\textquotesingle{}s very easy to take in and easily preview data type and sample data.}
+
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(Seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 192
+## Columns: 10
+## $ Year          <dbl> 1969, 1969, 1969, 1969, 1969, 1969, 1969, 1969, 1969, 19~
+## $ Month         <fct> Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, D~
+## $ DriversKilled <dbl> 107, 97, 102, 87, 119, 106, 110, 106, 107, 134, 147, 180~
+## $ drivers       <dbl> 1687, 1508, 1507, 1385, 1632, 1511, 1559, 1630, 1579, 16~
+## $ front         <dbl> 867, 825, 806, 814, 991, 945, 1004, 1091, 958, 850, 1109~
+## $ rear          <dbl> 269, 265, 319, 407, 454, 427, 522, 536, 405, 437, 434, 4~
+## $ kms           <dbl> 9059, 7685, 9963, 10955, 11823, 12391, 13460, 14055, 121~
+## $ PetrolPrice   <dbl> 0.10297181, 0.10236300, 0.10206249, 0.10087330, 0.101019~
+## $ VanKilled     <dbl> 12, 6, 12, 8, 10, 13, 11, 6, 10, 16, 13, 14, 14, 6, 8, 1~
+## $ law           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# A comprehensive look at the entire data set produced in html format }
+\CommentTok{\# It includes a ton of information including the basic statistics, structure, }
+\CommentTok{\# missing data, distribution visualizations, correlation matrix and principal }
+\CommentTok{\# component analysis. The screenshots of the webpage are attached below.}
+
+\FunctionTok{library}\NormalTok{(DataExplorer)}
+\NormalTok{DataExplorer}\SpecialCharTok{::}\FunctionTok{create\_report}\NormalTok{(datasets}\SpecialCharTok{::}\NormalTok{Seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 
+## processing file: report.rmd
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |                                                                      |   0%  |                                                                              |..                                                                    |   2%
+##    inline R code fragments
+## 
+##   |                                                                              |...                                                                   |   5%
+## label: global_options (with options) 
+## List of 1
+##  $ include: logi FALSE
+## 
+##   |                                                                              |.....                                                                 |   7%
+##   ordinary text without R code
+## 
+##   |                                                                              |.......                                                               |  10%
+## label: introduce
+##   |                                                                              |........                                                              |  12%
+##   ordinary text without R code
+## 
+##   |                                                                              |..........                                                            |  14%
+## label: plot_intro
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |............                                                          |  17%
+##   ordinary text without R code
+## 
+##   |                                                                              |.............                                                         |  19%
+## label: data_structure
+##   |                                                                              |...............                                                       |  21%
+##   ordinary text without R code
+## 
+##   |                                                                              |.................                                                     |  24%
+## label: missing_profile
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |..................                                                    |  26%
+##   ordinary text without R code
+## 
+##   |                                                                              |....................                                                  |  29%
+## label: univariate_distribution_header
+##   |                                                                              |......................                                                |  31%
+##   ordinary text without R code
+## 
+##   |                                                                              |.......................                                               |  33%
+## label: plot_histogram
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |.........................                                             |  36%
+##   ordinary text without R code
+## 
+##   |                                                                              |...........................                                           |  38%
+## label: plot_density
+##   |                                                                              |............................                                          |  40%
+##   ordinary text without R code
+## 
+##   |                                                                              |..............................                                        |  43%
+## label: plot_frequency_bar
+##   |                                                                              |................................                                      |  45%
+##   ordinary text without R code
+## 
+##   |                                                                              |.................................                                     |  48%
+## label: plot_response_bar
+##   |                                                                              |...................................                                   |  50%
+##   ordinary text without R code
+## 
+##   |                                                                              |.....................................                                 |  52%
+## label: plot_with_bar
+##   |                                                                              |......................................                                |  55%
+##   ordinary text without R code
+## 
+##   |                                                                              |........................................                              |  57%
+## label: plot_normal_qq
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |..........................................                            |  60%
+##   ordinary text without R code
+## 
+##   |                                                                              |...........................................                           |  62%
+## label: plot_response_qq
+##   |                                                                              |.............................................                         |  64%
+##   ordinary text without R code
+## 
+##   |                                                                              |...............................................                       |  67%
+## label: plot_by_qq
+##   |                                                                              |................................................                      |  69%
+##   ordinary text without R code
+## 
+##   |                                                                              |..................................................                    |  71%
+## label: correlation_analysis
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |....................................................                  |  74%
+##   ordinary text without R code
+## 
+##   |                                                                              |.....................................................                 |  76%
+## label: principal_component_analysis
+\end{verbatim}
+
+\begin{verbatim}
+##   |                                                                              |.......................................................               |  79%
+##   ordinary text without R code
+## 
+##   |                                                                              |.........................................................             |  81%
+## label: bivariate_distribution_header
+##   |                                                                              |..........................................................            |  83%
+##   ordinary text without R code
+## 
+##   |                                                                              |............................................................          |  86%
+## label: plot_response_boxplot
+##   |                                                                              |..............................................................        |  88%
+##   ordinary text without R code
+## 
+##   |                                                                              |...............................................................       |  90%
+## label: plot_by_boxplot
+##   |                                                                              |.................................................................     |  93%
+##   ordinary text without R code
+## 
+##   |                                                                              |...................................................................   |  95%
+## label: plot_response_scatterplot
+##   |                                                                              |....................................................................  |  98%
+##   ordinary text without R code
+## 
+##   |                                                                              |......................................................................| 100%
+## label: plot_by_scatterplot
+\end{verbatim}
+
+\begin{verbatim}
+## output file: /Users/mhk/Desktop/report.knit.md
+\end{verbatim}
+
+\begin{verbatim}
+## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS /Users/mhk/Desktop/report.knit.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output /Users/mhk/Desktop/report.html --lua-filter /Library/Frameworks/R.framework/Versions/4.1/Resources/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.1/Resources/library/rmarkdown/rmarkdown/lua/latex-div.lua --self-contained --variable bs3=TRUE --standalone --section-divs --table-of-contents --toc-depth 6 --template /Library/Frameworks/R.framework/Versions/4.1/Resources/library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable theme=yeti --include-in-header /var/folders/26/dl06hcqn4n377sbrgs92p4jr0000gn/T//RtmpPgrwOl/rmarkdown-str8c09184f6bfc.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Output created: report.html
+\end{verbatim}
+
+\hypertarget{basic-plots}{%
+\section{Basic Plots}\label{basic-plots}}
+
+Some basic plots, charts and graphs of the data set and its classes are
+shown below which includes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Bar Plot
+\item
+  3D Pie Chart
+\item
+  Histogram
+\item
+  Scatter Plot
+\item
+  Box Plot
+\end{enumerate}
+
+\hypertarget{bar-plot}{%
+\subsection{Bar Plot:}\label{bar-plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{attach}\NormalTok{(Seatbelts)}
+
+\CommentTok{\# Bar{-}plot of Number of Van Drivers killed through out the years}
+
+\FunctionTok{barplot}\NormalTok{(Seatbelts}\SpecialCharTok{$}\NormalTok{VanKilled, }\AttributeTok{xlab=}\StringTok{\textquotesingle{}Time (months)\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab=}\StringTok{\textquotesingle{}Number of Van Drivers Killed\textquotesingle{}}\NormalTok{, }\AttributeTok{col=}\FunctionTok{heat.colors}\NormalTok{(}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+The bar plot above shows the number of Van Drivers killed during a car
+accident in Britain in the described time period. While the numbers were
+small to begin with, we can see the entire pattern going down on a
+negative slope as they month passes, indicating that when the law of
+seat belts being mandatory was passed, the amount of deaths for van
+drivers decreased too even though the time was beginning of Industrial
+Revolution and the cars on the roads increased as the days passed.
+
+\hypertarget{d-pie-chart}{%
+\subsection{3D Pie Chart:}\label{d-pie-chart}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# A 3D pie chart of the mean of the number of car drivers, van drivers, front seat and rear seat passengers killed through out Jan, 1969 {-} Dec, 1984}
+
+\FunctionTok{library}\NormalTok{(plotrix)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{mean}\NormalTok{(Seatbelts}\SpecialCharTok{$}\NormalTok{DriversKilled), }\FunctionTok{mean}\NormalTok{(Seatbelts}\SpecialCharTok{$}\NormalTok{front), }\FunctionTok{mean}\NormalTok{(Seatbelts}\SpecialCharTok{$}\NormalTok{rear), }\FunctionTok{mean}\NormalTok{(Seatbelts}\SpecialCharTok{$}\NormalTok{VanKilled))}
+\FunctionTok{names}\NormalTok{(x) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"DriversKilled"}\NormalTok{, }\StringTok{"front"}\NormalTok{, }\StringTok{"rear"}\NormalTok{, }\StringTok{"VanKilled"}\NormalTok{)}
+\FunctionTok{pie3D}\NormalTok{(x, }\AttributeTok{labels =} \FunctionTok{names}\NormalTok{(x), }\AttributeTok{col =} \FunctionTok{cm.colors}\NormalTok{(}\DecValTok{4}\NormalTok{), }\AttributeTok{main =} \StringTok{"3D Pie chart of Drivers, Van Drivers, Front and Rear seat passengers}\SpecialCharTok{\textbackslash{}n}\StringTok{killed or injured in Great Britain during  1969{-}1984 "}\NormalTok{, }\AttributeTok{labelcol =} \StringTok{"darkgreen"}\NormalTok{, }\AttributeTok{col.main =} \StringTok{"darkgreen"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+Above I have constructed a 3D pie chart using the plotrix library. The
+pie chart shows the proportion of casualties in car accidents. An
+average was taken of the classes through out the period to construct
+this chart. The least are van drivers. This must be because vans are
+usually less on the roads then sedan/coupe cars. Secondly, vans are
+often driven slowly then the other cars. The most portion is taken by
+the front seat passengers, followed by rear seat passengers and after
+that comes the drivers at 3rd place. Surprisingly, according to the data
+provided, passengers, front more than rear, are likely to meet the fate
+of death than the one behind the wheel. One reason may be the fact that
+most driver seats have airbags while the passengers seat do not.
+
+\hypertarget{histogram}{%
+\subsection{Histogram:}\label{histogram}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Histogram for Drivers killed through out the period. Histogram is same as bar plot except that they depict the data in grouped form rather than discrete. }
+
+\FunctionTok{hist}\NormalTok{(DriversKilled , }\AttributeTok{col=}\FunctionTok{terrain.colors}\NormalTok{(}\DecValTok{11}\NormalTok{) , }\AttributeTok{border =} \StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\StringTok{\textquotesingle{}Histogram For Number of Car Drivers Killed}\SpecialCharTok{\textbackslash{}n}\StringTok{during 1969{-}1984 in The Great Britain}\SpecialCharTok{\textbackslash{}n}\StringTok{ \textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}Car Drivers Killed \textquotesingle{}}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+The histogram plotted demonstrates what was the usual toll of deaths of
+car drivers in the given time period. As we can see, at most times the
+casualties were between 100 and 120, peaking at 200 and hitting the
+lowest at 60.
+
+\hypertarget{scatter-plot}{%
+\subsection{Scatter Plot:}\label{scatter-plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scatter Plot Between Increment in Petrol Prices \& Number of Drivers Killed through out the period }
+
+\FunctionTok{plot}\NormalTok{(PetrolPrice, DriversKilled, }\AttributeTok{type=}\StringTok{\textquotesingle{}p\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}Petrol Price\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab=}\StringTok{\textquotesingle{}Number of Car Drivers Killed\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\StringTok{\textquotesingle{}Petrol Prices VS Car Drivers Deaths\textquotesingle{}}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}magenta\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+Above us we can see a scatter plot between increment in petrol prices
+and number of drivers killed through out the period. If we try to look
+at the relationship between the two classes, and try to predict a trend
+based on this plot, we may find that the death of car drivers doesn't
+depend on petrol prices much as they remained on average around the same
+at each price point except for at the last one which is the highest
+price which in logic should have more deaths but has the least. This may
+have to do with the introduction of law of seat belts introduced and
+being implemented by then and also the fact that car safety features
+were becoming more and more common with airbags and other durability
+features added to withstand such situations.
+
+\hypertarget{box-plot}{%
+\subsection{Box Plot:}\label{box-plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Box plot of people killed/seriously injured during car accidents in Great Britain during 1969{-}1984. The box plots represents five values in the graph i.e., minimum, first quartile, second quartile (median), third quartile, the maximum value of the data vector.}
+
+\FunctionTok{boxplot}\NormalTok{(drivers, }\AttributeTok{col=}\StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Box Plot (Jan,1969 {-} Dec, 1984)"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"People killed/seriously injured during car accidents"}\NormalTok{, }\AttributeTok{col.axis =} \StringTok{"darkgreen"}\NormalTok{, }\AttributeTok{col.lab =} \StringTok{"dark blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+This box plot is based on the total amount of people killed or seriously
+injured during the given period. This is the same as the data set
+\emph{UKDriverDeaths}. There are five values that this plot tells us. As
+we can see, the minimum amount of casualties was around 1000, then the
+first quartile is a little less than 1500, the median (second quartile;
+black line) is around 1700 while the third quartile is closing to 2000.
+The maximum here can be seen close to 2500.
+
+\hypertarget{correlation}{%
+\section{Correlation}\label{correlation}}
+
+\textbf{Definition:} When a variable tends to change from one to
+another, whether direct or indirect, it is considered correlated. A
+correlation coefficient is applied to measure a degree of association in
+variables and is usually called Pearson's correlation coefficient. The
+correlation coefficient is measured on a scale with values from +1
+through 0 and -1. When both variables increase, the correlation is
+positive, and if one variable increases, and the other decreases, the
+correlation is negative.
+
+\hypertarget{correlation-between-law-casualties}{%
+\subsection{Correlation between Law \&
+Casualties:}\label{correlation-between-law-casualties}}
+
+Lets have a look at the most important correlation of the data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(law, drivers, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col =} \StringTok{"pink"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(drivers }\SpecialCharTok{\textasciitilde{}}\NormalTok{ law), }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{3}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Correlation:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{cor}\NormalTok{(law, drivers), }\DecValTok{2}\NormalTok{)), }\AttributeTok{x =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{y =} \DecValTok{2300}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-7-1.pdf}
+The above scatter plot depicts the correlation between the total amount
+of people killed or seriously injured during the given period and if the
+law was passed then or not (0 = not passed, 1 = passed). It is clearly
+evident that the casualties decreases by a great deal after the law was
+passed. The \emph{cor} commands tells us that the correlation
+coefficient is negative 0.45 (-0.45) which proves that deaths decreases
+as law is passed. The r-value in magnitude is 0.45 which tells that this
+is a fairly moderate correlation. If we were to consider other factors
+too, which includes the increased number of vehicles on the road or the
+increased population, then this correlation is pretty good even without
+those factors included. But to counter those extra factors, the safety
+of the vehicles increased/improved too.
+
+\hypertarget{correlation-of-the-entire-dataset}{%
+\subsection{Correlation of the Entire
+Dataset:}\label{correlation-of-the-entire-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(corrplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## corrplot 0.92 loaded
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# converting months into numeric data as cor command does not accept non{-}numeric data}
+\NormalTok{Seatbelts}\SpecialCharTok{$}\NormalTok{Month }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(Month) }
+
+\CommentTok{\# This command prints the correlation between all of the classes of the data set}
+\FunctionTok{cor}\NormalTok{(Seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                     Year      Month DriversKilled    drivers      front
+## Year           1.0000000 0.00000000    -0.3657291 -0.4809857 -0.6932829
+## Month          0.0000000 1.00000000     0.5458411  0.5084645  0.4305932
+## DriversKilled -0.3657291 0.54584115     1.0000000  0.8888264  0.7067596
+## drivers       -0.4809857 0.50846452     0.8888264  1.0000000  0.8084114
+## front         -0.6932829 0.43059322     0.7067596  0.8084114  1.0000000
+## rear          -0.1969329 0.54996694     0.3533510  0.3436685  0.6202248
+## kms            0.7739559 0.21251863    -0.3211016 -0.4447631 -0.3573823
+## PetrolPrice    0.5109097 0.01030832    -0.3866061 -0.4576675 -0.5392394
+## VanKilled     -0.5773166 0.14495270     0.4070412  0.4853995  0.4724207
+## law            0.5619346 0.02555513    -0.3285051 -0.4452269 -0.5624455
+##                      rear        kms PetrolPrice  VanKilled         law
+## Year          -0.19693293  0.7739559  0.51090973 -0.5773166  0.56193462
+## Month          0.54996694  0.2125186  0.01030832  0.1449527  0.02555513
+## DriversKilled  0.35335102 -0.3211016 -0.38660609  0.4070412 -0.32850510
+## drivers        0.34366850 -0.4447631 -0.45766754  0.4853995 -0.44522689
+## front          0.62022476 -0.3573823 -0.53923937  0.4724207 -0.56244554
+## rear           1.00000000  0.3330069 -0.13262721  0.1217581  0.02906753
+## kms            0.33300689  1.0000000  0.38390038 -0.4980356  0.49054938
+## PetrolPrice   -0.13262721  0.3839004  1.00000000 -0.2885584  0.39069323
+## VanKilled      0.12175808 -0.4980356 -0.28855841  1.0000000 -0.39494121
+## law            0.02906753  0.4905494  0.39069323 -0.3949412  1.00000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Converting into matrix to use with command *corrplot* }
+\NormalTok{cor.mat.seatbelts }\OtherTok{=} \FunctionTok{cor}\NormalTok{(Seatbelts)}
+
+\CommentTok{\# Plotting the correlation between all of the classes of the data set visually}
+\FunctionTok{corrplot}\NormalTok{(cor.mat.seatbelts)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Another way of displaying correlation plot between all the classes, almost the same as corrplot command but this one displays the Pearson\textquotesingle{}s Coefficient written in numbers rather than fading colors}
+\FunctionTok{library}\NormalTok{(psych)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'psych'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:plotrix':
+## 
+##     rescale
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{corPlot}\NormalTok{(cor.mat.seatbelts, }\AttributeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{B20102088-MuhammadHabibKhan-FinalLab_files/figure-latex/unnamed-chunk-8-2.pdf}
+
+The cor command prints the correlation between all of the classes of the
+data set numerically in a tabular form. Using corrplot, we plot all that
+data into a visually appealing and easy to grasp graph. Some main
+selective insights from this correlation data:
+
+\begin{itemize}
+\item
+  The petrol prices and years are moderately positively correlated,
+  meaning that the petrol prices raised as the years passes
+\item
+  Years passed and law passed are weakly but close to moderately
+  correlated with the total amount of people killed or seriously injured
+  in car accidents. However, they both are moderately correlated with
+  the deaths of front seat passengers. The correlation is negative in
+  all instances showing that years passing resulted in less deaths.
+\item
+  Years passed and number of Van Drivers killed also has a moderate
+  negative correlation.
+\item
+  The kms (distance) also has a weak but close to moderate negative
+  correlation with the total amount of people killed or seriously
+  injured in car accidents.
+\end{itemize}
+
+\end{document}
